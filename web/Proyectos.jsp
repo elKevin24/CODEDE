@@ -94,14 +94,9 @@
             <table border="1"   class="highlight responsive-table striped " >
                 <tr>
                     <td>No.</td>
-                    <td>Id_Alumno</td>
-                    <td>Apellido</td>
-                    <td>Segundo Apellido</td>
+                    <td>Id_Proyecto</td>
                     <td>Nombre</td>
-                    <td>Segundo Nombre</td>
-                    <td>Tercer Nombre </td>                        
-
-                    <td>Seccion</td>
+                    
 
                 </tr>
                 <%
@@ -112,15 +107,12 @@
                         int a = i + 1;
                         out.println("<tr>");
                         out.println("<td>" + a + "</td>");
-                        out.println("<td>" + lista.get(i).getId_alumno() + "</td>");
-                        out.println("<td>" + lista.get(i).getApellido() + "</td>");
-                        out.println("<td>" + lista.get(i).getSapellido() + "</td>");
+                        out.println("<td>" + lista.get(i).getId_proyecto()+ "</td>");
+                        
                         out.println("<td>" + lista.get(i).getNombre() + "</td>");
-                        out.println("<td>" + lista.get(i).getSnombre() + "</td>");
-                        out.println("<td>" + lista.get(i).getTnombre() + "</td>");
-                        out.println("<td>" + lista.get(i).getId_seccion() + "</td>");
-                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_alumno() + ">" + "Editar" + "</a>" + "</td>");
-                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Eliminar.jsp?id=" + lista.get(i).getId_alumno() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
+                        
+                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto()+ ">" + "Editar" + "</a>" + "</td>");
+                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto()+ ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
 
                         out.println("</tr>");
                     }

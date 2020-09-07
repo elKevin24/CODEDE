@@ -23,17 +23,23 @@ public static LinkedList<BeanUsuario> consultarUsuario() throws SQLException
          try (Connection con = c.getConexion()) {
              Statement st;
              st = con.createStatement();
-                try (ResultSet rs = st.executeQuery("SELECT select id_proyecto, nombre, num_convenio, descripcion, monto_total, id_municipio, ISnull(id_check, ''),  ISnull(id_avance, '')from  t_proyecto " )) {
+                try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, fecha_comit, descripcion, monto_total,  ISnull(id_check, '') id_check,  ISnull(id_avance, '') id_avance, t_municipio.nombre as municipio, cod_postal\n" +
+"from  t_proyecto, t_municipio\n" +
+"where t_proyecto.id_municipio = t_municipio.id_municipio" )) {
                     while (rs.next())
                     {
                         BeanUsuario user = new BeanUsuario();
-                        user.setId_alumno(rs.getString("id_alumno"));       
+                        user.setId_proyecto(rs.getString("id_proyecto"));       
                         user.setNombre(rs.getString("nombre"));             
-                        user.setSnombre(rs.getString("snombre"));   
-                        user.setTnombre(rs.getString("tnombre"));
-                        user.setApellido(rs.getString("apellido"));         
-                        user.setSapellido(rs.getString("sapellido"));       
-                        user.setId_seccion(rs.getString("id_seccion"));     
+                        user.setNum_convenio(rs.getString("num_convenio"));   
+                        user.setFecha_comit(rs.getString("fecha_comit"));
+                        user.setDescripcion(rs.getString("descripcion"));         
+                        user.setMonto_total(rs.getString("monto_total"));       
+                        user.setId_check(rs.getString("id_check"));     
+                        user.setId_avance(rs.getString("id_avance"));     
+                        user.setMunicipio(rs.getString("municipio"));
+                        user.setCod_postal(rs.getString("cod_postal"));
+                        
                                                                             
                         usuarios.add(user);                                 
                     }  }
@@ -66,16 +72,16 @@ public static LinkedList<BeanUsuario> AlumnosGeneralActivos() throws SQLExceptio
 "WHERE        (dbo.tbl_alumno.status = 1) " )) {
                     while (rs.next())
                     {
-                        BeanUsuario user = new BeanUsuario();
-                        user.setId_alumno(rs.getString("id_alumno"));       
-                        user.setNombre(rs.getString("nombre"));             
-                        user.setSnombre(rs.getString("snombre"));   
-                        user.setTnombre(rs.getString("tnombre"));
-                        user.setApellido(rs.getString("apellido"));         
-                        user.setSapellido(rs.getString("sapellido"));       
-                        user.setId_seccion(rs.getString("grado"));     
-                                                                            
-                        usuarios.add(user);                                 
+//                        BeanUsuario user = new BeanUsuario();
+//                        user.setId_alumno(rs.getString("id_alumno"));       
+//                        user.setNombre(rs.getString("nombre"));             
+//                        user.setSnombre(rs.getString("snombre"));   
+//                        user.setTnombre(rs.getString("tnombre"));
+//                        user.setApellido(rs.getString("apellido"));         
+//                        user.setSapellido(rs.getString("sapellido"));       
+//                        user.setId_seccion(rs.getString("grado"));     
+//                                                                            
+//                        usuarios.add(user);                                 
                     }  }
              st.close();
          }                    
@@ -144,17 +150,17 @@ public static LinkedList<BeanUsuario> consultarNotasEx(String A, String B) throw
 "WHERE C.id_alumno = O.id_alumno" )) {
                     while (rs.next())
                     {
-                        BeanUsuario user = new BeanUsuario();
-                        user.setId_alumno(rs.getString("id_alumno"));       
-                        user.setNombre(rs.getString("nombre"));             
-                        user.setSnombre(rs.getString("snombre"));   
-                        user.setTnombre(rs.getString("tnombre"));
-                        user.setApellido(rs.getString("apellido"));         
-                        user.setSapellido(rs.getString("sapellido"));       
-                        user.setId_seccion(rs.getString("id_seccion"));  
-                        
-                                                                            
-                        usuarios.add(user);                                 
+//                        BeanUsuario user = new BeanUsuario();
+//                        user.setId_alumno(rs.getString("id_alumno"));       
+//                        user.setNombre(rs.getString("nombre"));             
+//                        user.setSnombre(rs.getString("snombre"));   
+//                        user.setTnombre(rs.getString("tnombre"));
+//                        user.setApellido(rs.getString("apellido"));         
+//                        user.setSapellido(rs.getString("sapellido"));       
+//                        user.setId_seccion(rs.getString("id_seccion"));  
+//                        
+//                                                                            
+//                        usuarios.add(user);                                 
                     }  }
              st.close();
          }                    
@@ -182,16 +188,16 @@ public static LinkedList<BeanUsuario> consultarNotasEx(String A, String B) throw
 "ORDER BY apellido"  )) {
                     while (rs.next())
                     {
-                        BeanUsuario user = new BeanUsuario();
-                        user.setId_alumno(rs.getString("id_alumno"));       
-                        user.setNombre(rs.getString("nombre"));             
-                        user.setSnombre(rs.getString("snombre")); 
-                        user.setTnombre(rs.getString("tnombre")); 
-                        user.setApellido(rs.getString("apellido"));         
-                        user.setSapellido(rs.getString("sapellido"));       
-                        user.setId_seccion(rs.getString("id_seccion"));     
-                           
-                        usuarios.add(user);                                 
+//                        BeanUsuario user = new BeanUsuario();
+//                        user.setId_alumno(rs.getString("id_alumno"));       
+//                        user.setNombre(rs.getString("nombre"));             
+//                        user.setSnombre(rs.getString("snombre")); 
+//                        user.setTnombre(rs.getString("tnombre")); 
+//                        user.setApellido(rs.getString("apellido"));         
+//                        user.setSapellido(rs.getString("sapellido"));       
+//                        user.setId_seccion(rs.getString("id_seccion"));     
+//                           
+//                        usuarios.add(user);                                 
                     }  }
              st.close();
          }                    
@@ -215,11 +221,11 @@ public static boolean ActualizarUsuario(BeanUsuario usuario)
                 Statement st;        
                 st = con.createStatement();    
                 //UNA COMA ME HIZO DESVELARME HASTA LAS DOS DE LA MAÑANA
-                String sql="update tbl_alumno set encargado1 ='"+usuario.getEncargado()+"', telefono='"+usuario.getTelefono()+"', correo='"+usuario.getCorreo()+"',nombre ='"+usuario.getNombre()+"', snombre='"+usuario.getSnombre()+"', tnombre='"+usuario.getTnombre()+"', apellido='"+usuario.getApellido()+"', sapellido='"+usuario.getSapellido()+"', id_seccion='"+usuario.getId_seccion()+"' where id_alumno="+usuario.getId_alumno()+"";
-                         //"update tbl_seccion set grado ='"+usuario.getGrado()+"', seccion='"+usuario.getSeccion()+"', Id_nivel='"+usuario.getId_nivel()+"' where Id_seccion="+usuario.getId_seccion()+"";
-                  
-                st.execute(sql);
-                actualizado=true;
+//                String sql="update tbl_alumno set encargado1 ='"+usuario.getEncargado()+"', telefono='"+usuario.getTelefono()+"', correo='"+usuario.getCorreo()+"',nombre ='"+usuario.getNombre()+"', snombre='"+usuario.getSnombre()+"', tnombre='"+usuario.getTnombre()+"', apellido='"+usuario.getApellido()+"', sapellido='"+usuario.getSapellido()+"', id_seccion='"+usuario.getId_seccion()+"' where id_alumno="+usuario.getId_alumno()+"";
+//                         //"update tbl_seccion set grado ='"+usuario.getGrado()+"', seccion='"+usuario.getSeccion()+"', Id_nivel='"+usuario.getId_nivel()+"' where Id_seccion="+usuario.getId_seccion()+"";
+//                  
+//                st.execute(sql);
+//                actualizado=true;
                 st.close();
             }                  
                                     
@@ -274,20 +280,20 @@ public static BeanUsuario ObtenerUsuario(String id)
         try (ResultSet rs = st.executeQuery("select * from tbl_alumno where Id_alumno="+id+"")) {
             while (rs.next())
             {
-                user.setEncargado (rs.getString("Encargado1"));
-                user.setTelefono(rs.getString("Telefono"));
-                user.setCorreo (rs.getString("Correo"));
-                user.setId_alumno (rs.getString("Id_alumno"));
-                
-               
-           
-               
-                user.setNombre (rs.getString("Nombre"));
-                user.setSnombre (rs.getString("Snombre"));
-                user.setApellido(rs.getString("Apellido"));
-                user.setSapellido (rs.getString("Sapellido"));
-                user.setId_seccion (rs.getString("Id_seccion"));
-                
+//                user.setEncargado (rs.getString("Encargado1"));
+//                user.setTelefono(rs.getString("Telefono"));
+//                user.setCorreo (rs.getString("Correo"));
+//                user.setId_alumno (rs.getString("Id_alumno"));
+//                
+//               
+//           
+//               
+//                user.setNombre (rs.getString("Nombre"));
+//                user.setSnombre (rs.getString("Snombre"));
+//                user.setApellido(rs.getString("Apellido"));
+//                user.setSapellido (rs.getString("Sapellido"));
+//                user.setId_seccion (rs.getString("Id_seccion"));
+//                
                 
                 
             }
@@ -317,9 +323,9 @@ public static BeanUsuario ObtenerUsuario(String id)
             while (rs.next())
             {
                 
-                user.setId_alumno(rs.getString("Id_alumno"));
-                user.setNombre(rs.getString("Nombre"));
-                System.err.println(""+ rs.getString("Id_alumno"));
+//                user.setId_alumno(rs.getString("Id_alumno"));
+//                user.setNombre(rs.getString("Nombre"));
+//                System.err.println(""+ rs.getString("Id_alumno"));
             }
         }
             st.close();
@@ -367,11 +373,11 @@ public static BeanUsuario ObtenerUsuario(String id)
     Statement st;
     st = con.createStatement();
     //campos de la tabla
-    String sql="INSERT INTO tbl_alumno(nombre, snombre, tnombre, apellido, sapellido, id_seccion) VALUES ('"+Alumno.getNombre()+"','"+Alumno.getSnombre()+"','"+Alumno.getTnombre()+"','"+Alumno.getApellido()+"','"+Alumno.getSapellido()+"','"+Alumno.getId_seccion()+"')";
-                                                                                       
-    System.out.println(sql);                                                                     
-    st.execute(sql);                                                                                             
-                                                                                                                  
+//    String sql="INSERT INTO tbl_alumno(nombre, snombre, tnombre, apellido, sapellido, id_seccion) VALUES ('"+Alumno.getNombre()+"','"+Alumno.getSnombre()+"','"+Alumno.getTnombre()+"','"+Alumno.getApellido()+"','"+Alumno.getSapellido()+"','"+Alumno.getId_seccion()+"')";
+//                                                                                       
+//    System.out.println(sql);                                                                     
+//    st.execute(sql);                                                                                             
+//                                                                                                                  
     agregado=true;                                                                                             
     st.close();                                                                                               
    }                                                                                                          

@@ -79,19 +79,19 @@ public class ServletRegistro extends HttpServlet {
         String Id_seccion = request.getParameter("Id_seccion");
         
         BeanUsuario busuario;
-        busuario = new BeanUsuario(Nombre, Snombre, Tnombre, Apellido, Sapellido, Id_seccion);
-        boolean sw = Usuario.agregarUsuario(busuario);
-
-        PrintWriter out = response.getWriter();
-        out.println( Nombre + Snombre + Tnombre + Apellido + Sapellido + Id_seccion );
-
-        if (sw) {
-            response.sendRedirect("Guardado.jsp");
-
-        } else {
-
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
-        }
+//        busuario = new BeanUsuario(Nombre, Snombre, Tnombre, Apellido, Sapellido, Id_seccion);
+//        boolean sw = Usuario.agregarUsuario(busuario);
+//
+//        PrintWriter out = response.getWriter();
+//        out.println( Nombre + Snombre + Tnombre + Apellido + Sapellido + Id_seccion );
+//
+//        if (sw) {
+//            response.sendRedirect("Guardado.jsp");
+//
+//        } else {
+//
+//            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+//        }
 
     }
 
