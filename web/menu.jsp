@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" type="image/jpeg" href="IMG/LICEO.jpeg" />
+        <link rel="icon" type="image/jpeg" href="IMG/LOGOGOB.png" />
 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
