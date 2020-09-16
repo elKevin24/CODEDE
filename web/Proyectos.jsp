@@ -60,10 +60,13 @@
                             <input type="text" size="20" name="monto_total">
                             <label for="monto_total">Monto Total</label>
                         </div>
+
                         <div class="input-field col s3">
-                            <input type="text" size="20" name="Sapellido">
-                            <label for="Sapellido">Segundo Apellido</label>
+                            
+                            <input type="date" name="fecha">
+
                         </div>
+
                         <div class="row">
                             <div class="input-field col s3">
                                 <select name="municipio">
@@ -75,7 +78,7 @@
                                 <label>Escoger Municipio</label>
                             </div>
                         </div>
-                        
+
                         <div class="input-field col s3">
                             <input type="submit" value="Registrar" class="btn-large" name="enviar">
 
