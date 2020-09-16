@@ -18,7 +18,7 @@ public class personaDAO implements Validar {
     @Override
     public int Validar(persona per) {
         int r=0;
-        String sql="select * from t_usuario where usuario=? and clave=?";
+        String sql="select * from t_identificacion where nombreusuario=? and contraseña=?";
         try{
             con=cn.getConexion();
             ps=con.prepareStatement(sql);
@@ -27,8 +27,8 @@ public class personaDAO implements Validar {
             rs=ps.executeQuery();
             while(rs.next()){
                 r=r+1;
-                per.setUsuario(rs.getString("usuario"));
-                per.setClave(rs.getString("clave"));
+                per.setUsuario(rs.getString("nombreusuario"));
+                per.setClave(rs.getString("contraseña"));
             }
             if(r==1){
                 return 1;

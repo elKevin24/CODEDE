@@ -6,6 +6,7 @@ import java.sql.Statement;
 
 import controlador.BeanUsuario;
 import controlador.BeanUsuarioNotas;
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.LinkedList;
 
@@ -23,7 +24,7 @@ public static LinkedList<BeanUsuario> consultarUsuario() throws SQLException
          try (Connection con = c.getConexion()) {
              Statement st;
              st = con.createStatement();
-                try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, fecha_comit, descripcion, monto_total,  ISnull(id_check, '') id_check,  ISnull(id_avance, '') id_avance, t_municipio.nombre as municipio, cod_postal\n" +
+                try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, fecha_comit, descripcion, monto_total,  ISnull(id_check, '') id_check, t_municipio.nombre as municipio, cod_postal\n" +
 "from  t_proyecto, t_municipio\n" +
 "where t_proyecto.id_municipio = t_municipio.id_municipio" )) {
                     while (rs.next())
@@ -34,9 +35,9 @@ public static LinkedList<BeanUsuario> consultarUsuario() throws SQLException
                         user.setNum_convenio(rs.getString("num_convenio"));   
                         user.setFecha_comit(rs.getString("fecha_comit"));
                         user.setDescripcion(rs.getString("descripcion"));         
-                        user.setMonto_total(rs.getString("monto_total"));       
+                        user.setMonto_total(rs.getBigDecimal("monto_total"));       
                         user.setId_check(rs.getString("id_check"));     
-                        user.setId_avance(rs.getString("id_avance"));     
+                            
                         user.setMunicipio(rs.getString("municipio"));
                         user.setCod_postal(rs.getString("cod_postal"));
                         
@@ -363,7 +364,7 @@ public static BeanUsuario ObtenerUsuario(String id)
 //    return eliminado;
 //}   
     
- public static boolean agregarUsuario(BeanUsuario Alumno)
+ public static boolean agregarUsuario(BeanUsuario Proyecto)
  {
   boolean agregado=false;
   try {
@@ -372,12 +373,15 @@ public static BeanUsuario ObtenerUsuario(String id)
     if(con!=null){
     Statement st;
     st = con.createStatement();
-    //campos de la tabla
-//    String sql="INSERT INTO tbl_alumno(nombre, snombre, tnombre, apellido, sapellido, id_seccion) VALUES ('"+Alumno.getNombre()+"','"+Alumno.getSnombre()+"','"+Alumno.getTnombre()+"','"+Alumno.getApellido()+"','"+Alumno.getSapellido()+"','"+Alumno.getId_seccion()+"')";
-//                                                                                       
-//    System.out.println(sql);                                                                     
-//    st.execute(sql);                                                                                             
-//                                                                                                                  
+   
+////    --campos de la tabla
+//"INSERT INTO t_proyecto(nombre, num_convenio, descripcion, monto_total, id_municipio, fecha) VALUES ('"+Proyecto.getNombre()+"','"+Proyecto.getNum_convenio()+"','"+Proyecto.getDescripcion()+"','"+Proyecto.getMonto_total()+"','"+Proyecto.getMunicipio()+"','"+Proyecto.getFecha_comit()+"')";
+    String sql="INSERT INTO t_proyecto(nombre, num_convenio, descripcion, monto_total, fecha, id_municipio) VALUES "
+            + "('"+Proyecto.getNombre()+"','"+Proyecto.getNum_convenio()+"','"+Proyecto.getDescripcion()+"','"+Proyecto.getMonto_total()+"','"+Proyecto.getFecha_comit()+"','"+Proyecto.getMunicipio()+"')";
+                                                                                       
+    System.out.println(sql);                                                                     
+    st.execute(sql);                                                                                             
+                                                                                                                  
     agregado=true;                                                                                             
     st.close();                                                                                               
    }                                                                                                          
