@@ -60,13 +60,10 @@
                             <input type="text" size="20" name="monto_total">
                             <label for="monto_total">Monto Total</label>
                         </div>
-
                         <div class="input-field col s3">
-                            
-                            <input type="date" name="fecha">
-
+                            <input type="text" size="20" name="Sapellido">
+                            <label for="Sapellido">Segundo Apellido</label>
                         </div>
-
                         <div class="row">
                             <div class="input-field col s3">
                                 <select name="municipio">
@@ -78,7 +75,7 @@
                                 <label>Escoger Municipio</label>
                             </div>
                         </div>
-
+                        
                         <div class="input-field col s3">
                             <input type="submit" value="Registrar" class="btn-large" name="enviar">
 
@@ -95,14 +92,11 @@
                 <table border="1"   class="highlight responsive-table striped " >
                     <tr>
 
-                        <td>Id Proyecto</td>
+                        <td>Id_Proyecto</td>
                         <td>Nombre</td>
                         <td>Descripcion</td>
                         <td>Fecha</td>
                         <td>Municipio</td>
-                        <td>Editar</td>
-                        <td>Eliminar</td>
-                        <td>Desembolso</td>
 
 
                     </tr>
@@ -117,10 +111,10 @@
                             out.println("<td>" + lista.get(i).getDescripcion() + "</td>");
                             out.println("<td>" + lista.get(i).getFecha_comit() + "</td>");
                             out.println("<td>" + lista.get(i).getMunicipio() + "</td>");
-                            
+
                             out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
                             out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
-                            out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Desembolso.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Desembolso" + "</a>" + "</td>");
+
                             out.println("</tr>");
                         }
                     %>  

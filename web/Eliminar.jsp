@@ -39,7 +39,7 @@
            if(res==true)
            {
             out.println("<script> alert('Registro  eliminado')</script>");
-              response.sendRedirect("http://localhost:8084/CODEDE/Proyectos.jsp");
+              response.sendRedirect("http://localhost:8084/Registro/Alumnos.jsp");
                
            }
            else

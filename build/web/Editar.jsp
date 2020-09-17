@@ -14,13 +14,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-          <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <title>Modificacion de datos</title>
     </head>
@@ -38,48 +40,49 @@
             out.println("<div class='row'>");
             out.println("<form action='Actualizar.jsp' method='post'>");
             out.println("<div class='row'>");
+            out.println("<div class='input-field col s4'>");
+            out.println("<input type='text' size='20' name='Encargado' value=" + user.getEncargado() + ">");
+            out.println("<label for='Encargado'>Encargado</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s4'>");
+            out.println("<input type='text' size='20' name='Telefono' value=" + user.getTelefono()+ ">");
+            out.println("<label for='Telefono'>Telefono</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s4'>");
+            out.println("<input type='text' size='20' name='Correo' value=" + user.getCorreo() + ">");
+            out.println("<label for='Correo'>Correo</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s6'>");
+            out.println("<input type='text' size='20' name='Apellido' value=" + user.getApellido() + ">");
+            out.println("<label for='Apellido'>Apellido</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s6'>");
+            out.println("<input type='text' size='20' name='Sapellido' value=" + user.getSapellido() + ">");
+            out.println("<label for='Sapellido'>Segundo apellido</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s6'>");
+            out.println("<input type='text' size='20' name='Nombre' value=" + user.getNombre() + ">");
+            out.println("<input type='hidden' name='Id_alumno' value=" + user.getId_alumno() + "");
+            out.println("<label for='Nombre'>Nombre</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s6'>");
+            out.println("<input type='text' size='20' name='Snombre' value=" + user.getSnombre() + ">");
+            out.println("<label for='Snombre'>Segundo nombre</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s6'>");
+            out.println("<input type='text' size='20' name='Tnombre' value=" + user.getTnombre() + ">");
+            out.println("<label for='Tnombre'>Tercer nombre</label>");
+            out.println("</div>");
+            out.println("<div class='input-field col s6'>");
+            
             out.println("<div class='input-field col s3'>");
-            out.println("<input type='text' size='20' name='Nombre' value=" + user.getNombre()+ ">");
-            out.println("<label for='Nombre'>Nombre Proyecto</label>");
-            out.println("</div>");
-            
-            out.println("<div class='input-field col s3'>");
-            out.println("<input type='text' size='20' name='Convenio' value=" + user.getNum_convenio()+ ">");
-            out.println("<label for='convenio'>Convenio</label>");
+            out.println("<input type='text' size='20'  disabled value=" + user.getId_alumno() + ">");
+            out.println("<label for=''>Id Alumno</label>");
             out.println("</div>");
             out.println("<div class='input-field col s3'>");
-            out.println("<input type='text' size='20' name='Descripcion' value=" + user.getDescripcion()+ ">");
-            out.println("<label for='Telefono'>Descripcion</label>");
+            out.println("<input type='text' size='20' name='Id_seccion' value=" + user.getId_seccion() + ">");
+            out.println("<label for='Id_seccion'>Id_seccion</label>");
             out.println("</div>");
-            
-            out.println("<div class='input-field col s3'>");
-            out.println("<input type='text' size='20' name='Monto' value=" + user.getMonto_total()+ ">");
-            out.println("<label for='Monto'>Monto total</label>");
-            out.println("</div>");
-            
-            out.println("<div class='input-field col s3'>");
-            out.println("<input type='text' size='20' name='Municipio' disabled value=" + user.getMunicipio()+ ">");
-            out.println("<label for='Municipio'>Municipio</label>");
-            out.println("</div>");
-            
-            
-            
-            out.println("<div class='row'>");
-            out.println("<div class='input-field col s3'>");
-            out.println("<select name='Id_municipio'>");
-            out.println("<option value='1'>Zacapa</option>");
-            out.println("<option value='2'>Estanzuela</option>");
-            out.println("<option value='3'>Rio Hondo</option>");
-            out.println("</select>");
-            out.println("<label>Escoger Municipio</label>");
-            out.println("</div>");
-            out.println("</div>");
-            out.println("<div class='input-field col s1'>");
-            out.println("<input type='hidden' size='20' name='Id_proyecto' value=" + user.getId_proyecto()+ ">");
-            
-            out.println("</div>");
-            
-            
 
             out.println("<div class='row'>");
             out.println("<input type='submit' value='Actualizar' class='btn-large'>");
@@ -94,14 +97,6 @@
 
 
 
-<!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('select').material_select();
-            });
 
-        </script>
     </body>
 </html>
