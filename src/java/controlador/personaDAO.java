@@ -18,7 +18,7 @@ public class personaDAO implements Validar {
     @Override
     public int Validar(persona per) {
         int r=0;
-        String sql="select * from dbo.t_identificacion where nombreusuario=? and contraseña=?";
+        String sql="select * from t_identificacion where nombreusuario=? and contraseña=?";
         try{
             con=cn.getConexion();
             ps=con.prepareStatement(sql);

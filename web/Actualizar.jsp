@@ -3,6 +3,7 @@
     Created on : 05-may-2018, 14:39:42
     Author     : nichodeveloper
 --%>
+<%@page import="java.math.BigDecimal"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="modelo.Usuario"%>
@@ -22,34 +23,28 @@
         <%
             
              boolean res=false;
-             String Encargado = request.getParameter("Encargado");
-             String Telefono = request.getParameter("Telefono");
-             String Correo = request.getParameter("Correo");
-             String Id_alumno= request.getParameter("Id_alumno");
+             String Id_proyecto = request.getParameter("Id_proyecto");
              String Nombre = request.getParameter("Nombre");
-             String Snombre = request.getParameter("Snombre");
-             String Tnombre = request.getParameter("Tnombre");
-             String Apellido = request.getParameter("Apellido");             
-             String Sapellido = request.getParameter("Sapellido");             
-             String Id_seccion = request.getParameter("Id_seccion"); 
+             String Convenio = request.getParameter("Convenio");
+             String Descripcion = request.getParameter("Descripcion");
+             String a= request.getParameter("Monto");
+             String Id_municipio = request.getParameter("Id_municipio");
+             BigDecimal monto_total = new BigDecimal(a);
         
              BeanUsuario user = new BeanUsuario();
-             user.setEncargado(Encargado);
-             user.setTelefono(Telefono);
-             user.setCorreo(Correo);
-             user.setId_alumno(Id_alumno);
+             user.setId_proyecto(Id_proyecto);
              user.setNombre(Nombre);
-             user.setSnombre(Snombre);
-             user.setTnombre(Tnombre);
-             user.setApellido(Apellido);
-             user.setSapellido(Sapellido);
-             user.setId_seccion(Id_seccion);
+             user.setNum_convenio(Convenio);
+             user.setDescripcion(Descripcion);
+             user.setMonto_total(monto_total);
+             user.setId_municipio(Id_municipio);
+             
              
              res=Usuario.ActualizarUsuario(user);
              if(res)
              {
               out.println("<script> alert('Registro  Actualizado')</script>");
-              response.sendRedirect("http://localhost:8084/Registro/Guardado.jsp");
+              response.sendRedirect("http://localhost:8084/CODEDE/Guardado.jsp");
                
              }
              else
