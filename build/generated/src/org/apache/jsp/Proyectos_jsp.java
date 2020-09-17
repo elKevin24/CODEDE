@@ -64,147 +64,130 @@ public final class Proyectos_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("\r\n");
       out.write("    <head>\r\n");
       out.write("\r\n");
-      out.write("        <!-- Compiled and minified CSS -->\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css\">\r\n");
-      out.write("\r\n");
-      out.write("        <!-- Compiled and minified JavaScript -->\r\n");
-      out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js\"></script>\r\n");
-      out.write("\r\n");
       out.write("        <!--Import Google Icon Font-->\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n");
+      out.write("        <!--Import materialize.css-->\r\n");
+      out.write("        <link type=\"text/css\" rel=\"stylesheet\" href=\"css/materialize.min.css\"  media=\"screen,projection\"/>\r\n");
       out.write("\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "menu.jsp", out, true);
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("            <title>Registro</title>\r\n");
-      out.write("        </head>\r\n");
-      out.write("        <body>\r\n");
-      out.write("\r\n");
-      out.write("        ");
-
-
-            String formParameter = request.getParameter("grado");
-            if (formParameter == null) {
-
-            } else {
-
-                session.setMaxInactiveInterval(1000 * 5); // 5 minutes
-                session.setAttribute("Id_grado", formParameter);
-
-            }
-            String grado = String.valueOf(session.getAttribute("Id_grado"));
-            BeanSeccion user = new BeanSeccion();
-            user = Seccioon.ObtenerSeccion(grado);
-
-            out.println("<h4>Registro de Alumnos " + user.getGrado() + " Seccion " + user.getSeccion() + "</h4>");
-
-
-        
+      out.write("        <!--Let browser know website is optimized for mobile-->\r\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"col s12\">\r\n");
       out.write("\r\n");
-      out.write("            <a  href=\"grados.jsp\" class=\"btn-floating pulse\" ><i class=\"material-icons\">arrow_back</i></a>\r\n");
       out.write("\r\n");
-      out.write("        </div>\r\n");
-      out.write("        <form action=\"ServletRegistro.do\" method=\"post\" >\r\n");
-      out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"col s12\">\r\n");
+      out.write("        <title>Registro de Proyectos</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("            <h3> Ingreso de Proyectos Codede </h3>\r\n");
       out.write("\r\n");
-      out.write("                    <div class=\"input-field col s3\">\r\n");
-      out.write("                        <input type=\"text\" size=\"20\" name=\"Nombre\">\r\n");
-      out.write("                        <label for=\"Nombre\"> Nombre</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s3\">\r\n");
-      out.write("                        <input type=\"text\" size=\"20\" name=\"Snombre\">\r\n");
-      out.write("                        <label for=\"Snombre\">Segundo Nombre</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s3\">\r\n");
-      out.write("                        <input type=\"text\" size=\"20\" name=\"Tnombre\">\r\n");
-      out.write("                        <label for=\"Tnombre\">Tercer Nombre</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s3\">\r\n");
-      out.write("                        <input type=\"text\" size=\"20\" name=\"Apellido\">\r\n");
-      out.write("                        <label for=\"Apellido\">Apellido</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s3\">\r\n");
-      out.write("                        <input type=\"text\" size=\"20\" name=\"Sapellido\">\r\n");
-      out.write("                        <label for=\"Sapellido\">Segundo Apellido</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\" input-field col s1\">\r\n");
-      out.write("                        <input  type=\"text\" size=\"20\" name=\"Id_seccion\" value=\"");
-      out.print(grado);
-      out.write("\"\r\n");
-      out.write("                                <label for=\"Id_seccion\">Codigo grado</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s3\">\r\n");
-      out.write("                        <input type=\"submit\" value=\"Registrar\" class=\"btn-large\" name=\"enviar\">\r\n");
       out.write("\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col s6\">\r\n");
-      out.write("                    <div class=\"col s6 offset-s3\">\r\n");
+      out.write("            <div class=\"col s12\">\r\n");
       out.write("\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
+      out.write("                <a  href=\"grados.jsp\" class=\"btn-floating pulse\" ><i class=\"material-icons\">arrow_back</i></a>\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");
-      out.write("        </form>\r\n");
+      out.write("            <form action=\"ServletRegistro.do\" method=\"post\" >\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"col s12\">\r\n");
+      out.write("\r\n");
+      out.write("                        <div class=\"input-field col s3\">\r\n");
+      out.write("                            <input type=\"text\" size=\"20\" name=\"Nombre\">\r\n");
+      out.write("                            <label for=\"Nombre\">Nombre</label>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"input-field col s3\">\r\n");
+      out.write("                            <input type=\"text\" size=\"20\" name=\"Convenio\">\r\n");
+      out.write("                            <label for=\"Convenio\">Convenio</label>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"input-field col s3\">\r\n");
+      out.write("                            <input type=\"text\" size=\"20\" name=\"Descripcion\">\r\n");
+      out.write("                            <label for=\"Descripcion\">Descripcion</label>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"input-field col s3\">\r\n");
+      out.write("                            <input type=\"text\" size=\"20\" name=\"monto_total\">\r\n");
+      out.write("                            <label for=\"monto_total\">Monto Total</label>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"input-field col s3\">\r\n");
+      out.write("                            <input type=\"text\" size=\"20\" name=\"Sapellido\">\r\n");
+      out.write("                            <label for=\"Sapellido\">Segundo Apellido</label>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s3\">\r\n");
+      out.write("                                <select name=\"municipio\">\r\n");
+      out.write("                                    <option value=\"\" disabled selected>Municipio</option>\r\n");
+      out.write("                                    <option value=\"1\">Zacapa</option>\r\n");
+      out.write("                                    <option value=\"2\">Estanzuela</option>\r\n");
+      out.write("                                    <option value=\"3\">Rio Hondo</option>\r\n");
+      out.write("                                </select>\r\n");
+      out.write("                                <label>Escoger Municipio</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        \r\n");
+      out.write("                        <div class=\"input-field col s3\">\r\n");
+      out.write("                            <input type=\"submit\" value=\"Registrar\" class=\"btn-large\" name=\"enviar\">\r\n");
+      out.write("\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"col s12\">\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </form>\r\n");
       out.write("\r\n");
-      out.write("            <table border=\"1\"   class=\"highlight responsive-table striped \" >\r\n");
-      out.write("                <tr>\r\n");
-      out.write("                    <td>No.</td>\r\n");
-      out.write("                    <td>Id_Alumno</td>\r\n");
-      out.write("                    <td>Apellido</td>\r\n");
-      out.write("                    <td>Segundo Apellido</td>\r\n");
-      out.write("                    <td>Nombre</td>\r\n");
-      out.write("                    <td>Segundo Nombre</td>\r\n");
-      out.write("                    <td>Tercer Nombre </td>                        \r\n");
       out.write("\r\n");
-      out.write("                    <td>Seccion</td>\r\n");
+      out.write("            <div class=\"col s12\">\r\n");
       out.write("\r\n");
-      out.write("                </tr>\r\n");
-      out.write("                ");
+      out.write("                <table border=\"1\"   class=\"highlight responsive-table striped \" >\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("\r\n");
+      out.write("                        <td>Id_Proyecto</td>\r\n");
+      out.write("                        <td>Nombre</td>\r\n");
+      out.write("                        <td>Descripcion</td>\r\n");
+      out.write("                        <td>Fecha</td>\r\n");
+      out.write("                        <td>Municipio</td>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                    ");
 
-                    LinkedList<BeanUsuario> lista = Usuario.consultarUsuario2(grado);
+                        LinkedList<BeanUsuario> lista = Usuario.consultarUsuario();
 
-                    for (int i = 0; i < lista.size(); i++) {
+                        for (int i = 0; i < lista.size(); i++) {
 
-                        int a = i + 1;
-                        out.println("<tr>");
-                        out.println("<td>" + a + "</td>");
-                        out.println("<td>" + lista.get(i).getId_alumno() + "</td>");
-                        out.println("<td>" + lista.get(i).getApellido() + "</td>");
-                        out.println("<td>" + lista.get(i).getSapellido() + "</td>");
-                        out.println("<td>" + lista.get(i).getNombre() + "</td>");
-                        out.println("<td>" + lista.get(i).getSnombre() + "</td>");
-                        out.println("<td>" + lista.get(i).getTnombre() + "</td>");
-                        out.println("<td>" + lista.get(i).getId_seccion() + "</td>");
-                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_alumno() + ">" + "Editar" + "</a>" + "</td>");
-                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Eliminar.jsp?id=" + lista.get(i).getId_alumno() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
+                            out.println("<tr>");
+                            out.println("<td>" + lista.get(i).getId_proyecto() + "</td>");
+                            out.println("<td>" + lista.get(i).getNombre() + "</td>");
+                            out.println("<td>" + lista.get(i).getDescripcion() + "</td>");
+                            out.println("<td>" + lista.get(i).getFecha_comit() + "</td>");
+                            out.println("<td>" + lista.get(i).getMunicipio() + "</td>");
 
-                        out.println("</tr>");
-                    }
-                
+                            out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
+                            out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
+
+                            out.println("</tr>");
+                        }
+                    
       out.write("  \r\n");
-      out.write("\r\n");
+      out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\r\n");
+      out.write("        <!--Import jQuery before materialize.js-->\r\n");
+      out.write("        <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>\r\n");
+      out.write("        <script type=\"text/javascript\" src=\"js/materialize.min.js\"></script>\r\n");
+      out.write("        <script type=\"text/javascript\">\r\n");
+      out.write("            $(document).ready(function () {\r\n");
+      out.write("                $('select').material_select();\r\n");
+      out.write("            });\r\n");
       out.write("\r\n");
+      out.write("        </script>\r\n");
       out.write("    </body>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

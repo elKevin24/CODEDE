@@ -21,39 +21,29 @@
 
     </head>
     <body>
-       <center> <h3 class="light red-text text-lighten-3">REGISTRO DE ALUMNOS</h3></center>
+       <center> <h3 class="light blue-text text-lighten-3">Consejo Departamental de Desarrollo Zacapa</h3></center>
     
      <div class="slider">
     <ul class="slides">
       <li>
-        <img src="IMG/LICEO1.jpg"> <!-- random image -->
-        <div class="caption center-align">
-         <h3>LICEO CRISTIANO ZACAPANECO</h3>
-          <h5 class="light grey-text text-lighten-3">ENSEÑANDO CON VALORES</h5>
-        </div>
+        <img class="responsive-img" src="IMG/consejo.jpg"> <!-- random image -->
+       
       </li>
       <li>
-        <img src="IMG/LICEO2.jpg"> <!-- random image -->
+        <img class="responsive-img"  src="IMG/consejo2.jpg"> <!-- random image -->
         <div class="caption left-align">
-        <h3>LICEO CRISTIANO ZACAPANECO</h3>
-          <h5 class="light grey-text text-lighten-3">ENSEÑANDO CON VALORES</h5>
+        <h3 class="light black-text text-lighten-3">GOBIERNO DE GUATEMALA</h3>
+          <h5 class="light black-text text-lighten-3">AVANZANDO JUNTOS</h5>
         </div>
       </li>
       <li>
-        <img src="IMG/LICEO3.jpg"> <!-- random image -->
-        <div class="caption right-align">
-            <h3>LICEO CRISTIANO ZACAPANECO</h3>
-          <h5 class="light grey-text text-lighten-3">ENSEÑANDO CON VALORES</h5>
-      </div>
-      </li>
-      <li>
-        <img src="IMG/LICEO4.jpg"> <!-- random image -->
+        <img class="responsive-img"  src="IMG/bandera.jpg"> <!-- random image -->
         <div class="caption center-align">
-          <h3>LICEO CRISTIANO ZACAPANECO</h3>
-          <h5 class="light grey-text text-lighten-3">ENSEÑANDO CON VALORES</h5>
+        <h3 class="light black-text text-lighten-3">GOBIERNO DE GUATEMALA</h3>
+          <h5 class="light black-text text-lighten-3">AVANZANDO JUNTOS</h5>
         </div>
       </li>
-    </ul>
+      </ul>
   </div>
     
 
@@ -66,8 +56,9 @@
     var instances = M.Slider.init(elems,{
         duration:500,
         interval:2000,
-        height:600
-    });
+        height:550
+        
+            });
   });      
 
   
