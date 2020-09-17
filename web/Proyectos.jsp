@@ -95,11 +95,14 @@
                 <table border="1"   class="highlight responsive-table striped " >
                     <tr>
 
-                        <td>Id_Proyecto</td>
+                        <td>Id Proyecto</td>
                         <td>Nombre</td>
                         <td>Descripcion</td>
                         <td>Fecha</td>
                         <td>Municipio</td>
+                        <td>Editar</td>
+                        <td>Eliminar</td>
+                        <td>Desembolso</td>
 
 
                     </tr>
@@ -114,10 +117,10 @@
                             out.println("<td>" + lista.get(i).getDescripcion() + "</td>");
                             out.println("<td>" + lista.get(i).getFecha_comit() + "</td>");
                             out.println("<td>" + lista.get(i).getMunicipio() + "</td>");
-
+                            
                             out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
                             out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
-
+                            out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Desembolso.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Desembolso" + "</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>  
