@@ -87,6 +87,14 @@ public class BeanUsuario {
     public void setMonto_total(BigDecimal monto_total) {
         this.monto_total = monto_total;
     }
+
+    public String getId_municipio() {
+        return id_municipio;
+    }
+
+    public void setId_municipio(String id_municipio) {
+        this.id_municipio = id_municipio;
+    }
     
     
 
@@ -106,6 +114,7 @@ public class BeanUsuario {
         this.id_check = id_check;
         this.monto_total = monto_total;
         this.municipio = municipio;
+        this.id_municipio = id_municipio;
 
 
         
@@ -120,6 +129,7 @@ public class BeanUsuario {
     private BigDecimal monto_total;
     private String id_check;
     private String id_avance;
+    private String id_municipio;
     private String municipio;
     private String cod_postal;
     

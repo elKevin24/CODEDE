@@ -26,7 +26,7 @@ public static LinkedList<BeanUsuario> consultarUsuario() throws SQLException
              st = con.createStatement();
                 try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, fecha_comit, descripcion, monto_total,  ISnull(id_check, '') id_check, t_municipio.nombre as municipio, cod_postal\n" +
 "from  t_proyecto, t_municipio\n" +
-"where t_proyecto.id_municipio = t_municipio.id_municipio" )) {
+"where t_proyecto.id_municipio = t_municipio.id_municipio and estado = 1" )) {
                     while (rs.next())
                     {
                         BeanUsuario user = new BeanUsuario();
@@ -219,14 +219,20 @@ public static boolean ActualizarUsuario(BeanUsuario usuario)
          Connection con=c.getConexion();               
             if(con!=null)                 
             {
+                
+                
+//                user.setNombre(Nombre);
+//             user.setNum_convenio(Convenio);
+//             user.setDescripcion(Descripcion);
+//             user.setMonto_total(monto_total);
+//             user.setId_municipio(Id_municipio);
                 Statement st;        
                 st = con.createStatement();    
-                //UNA COMA ME HIZO DESVELARME HASTA LAS DOS DE LA MAÑANA
-//                String sql="update tbl_alumno set encargado1 ='"+usuario.getEncargado()+"', telefono='"+usuario.getTelefono()+"', correo='"+usuario.getCorreo()+"',nombre ='"+usuario.getNombre()+"', snombre='"+usuario.getSnombre()+"', tnombre='"+usuario.getTnombre()+"', apellido='"+usuario.getApellido()+"', sapellido='"+usuario.getSapellido()+"', id_seccion='"+usuario.getId_seccion()+"' where id_alumno="+usuario.getId_alumno()+"";
-//                         //"update tbl_seccion set grado ='"+usuario.getGrado()+"', seccion='"+usuario.getSeccion()+"', Id_nivel='"+usuario.getId_nivel()+"' where Id_seccion="+usuario.getId_seccion()+"";
-//                  
-//                st.execute(sql);
-//                actualizado=true;
+//                UNA COMA ME HIZO DESVELARME HASTA LAS DOS DE LA MAÑANA
+                String sql="update t_proyecto set nombre ='"+usuario.getNombre()+"', num_convenio='"+usuario.getNum_convenio()+"', descripcion='"+usuario.getDescripcion()+"', monto_total ='"+usuario.getMonto_total()+"', id_municipio='"+usuario.getId_municipio()+"' where id_proyecto="+usuario.getId_proyecto()+"";
+                            
+                st.execute(sql);
+                actualizado=true;
                 st.close();
             }                  
                                     
@@ -251,7 +257,7 @@ public static boolean CambiarEstado(String id)
                 Statement st;        
                 st = con.createStatement();    
                 //UNA COMA ME HIZO DESVELARME HASTA LAS DOS DE LA MAÑANA
-                String sql="update tbl_alumno set status ='0' where id_alumno="+id+"";
+                String sql="update t_proyecto set estado ='0' where id_proyecto="+id+"";
                          //"update tbl_seccion set grado ='"+usuario.getGrado()+"', seccion='"+usuario.getSeccion()+"', Id_nivel='"+usuario.getId_nivel()+"' where Id_seccion="+usuario.getId_seccion()+"";
                   
                 st.execute(sql);
@@ -278,23 +284,23 @@ public static BeanUsuario ObtenerUsuario(String id)
         try (Connection con = c.getConexion()) {
             Statement st;
             st = con.createStatement();
-        try (ResultSet rs = st.executeQuery("select * from tbl_alumno where Id_alumno="+id+"")) {
+        try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, fecha_comit, descripcion, monto_total,  ISnull(id_check, '') id_check, t_proyecto.id_municipio as id_municipio,t_municipio.nombre as municipio, cod_postal\n" +
+"from  t_proyecto, t_municipio\n" +
+"where t_proyecto.id_municipio = t_municipio.id_municipio\n" +
+"and id_proyecto = "+id+"")) {
             while (rs.next())
             {
-//                user.setEncargado (rs.getString("Encargado1"));
-//                user.setTelefono(rs.getString("Telefono"));
-//                user.setCorreo (rs.getString("Correo"));
-//                user.setId_alumno (rs.getString("Id_alumno"));
-//                
-//               
-//           
-//               
-//                user.setNombre (rs.getString("Nombre"));
-//                user.setSnombre (rs.getString("Snombre"));
-//                user.setApellido(rs.getString("Apellido"));
-//                user.setSapellido (rs.getString("Sapellido"));
-//                user.setId_seccion (rs.getString("Id_seccion"));
-//                
+                user.setId_proyecto(rs.getString("id_proyecto"));
+                user.setNombre(rs.getString("nombre"));
+                user.setNum_convenio(rs.getString("num_convenio"));
+                user.setFecha_comit(rs.getString("fecha_comit"));
+                user.setDescripcion(rs.getString("descripcion"));
+                user.setMonto_total(rs.getBigDecimal("monto_total"));
+                user.setId_check(rs.getString("id_check"));
+                user.setId_municipio(rs.getString("id_municipio"));
+                user.setMunicipio(rs.getString("municipio"));
+                user.setCod_postal(rs.getString("cod_postal"));
+                
                 
                 
             }
