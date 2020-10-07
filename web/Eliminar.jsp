@@ -5,8 +5,8 @@
 --%>
 
 
-<%@page import="controlador.BeanUsuario"%>
-<%@page import="modelo.Usuario"%>
+<%@page import="modelo.Proyecto"%>
+<%@page import="controlador.BeanProyecto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,7 +33,7 @@
            boolean res=false;
            if(id.length()>0)
            {
-               res= Usuario.CambiarEstado(id);
+               res= Proyecto.CambiarEstado(id);
            }
    
            if(res==true)

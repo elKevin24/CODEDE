@@ -26,10 +26,10 @@
     <body>
         <nav>
             <div class="nav-wrapper">
-                <div class="blue-grey darken-1 red-text text-darken-2"
+                <div class="blue darken-1 black-text text-darken-2"
 
 
-                     <a href="#!" class="brand-logo">.</a>
+                     <a href="#!" class="brand-logo">GOBIERNO DE GUATEMALA</a>
 
                     <ul class="right hide-on-med-and-down"> 
 
@@ -40,11 +40,10 @@
                     <ul id="slide-out" class="sidenav">
                         <li><div class="user-view">
                                 <div class="background">
-                                    <img src="IMG/logo3.jpg">
+                                    <img src="IMG/Fondo.png">
                                 </div>
-                                <a href="#user"><img class="circle" src="IMG/LICEO.jpeg"></a>
-                                <a href="#name"><span class="white-text name">LICEO CRISTIANO</span></a>
-                                <a href="#email"><span class="white-text email">liceocristiano@gmail.com</span></a>
+                                <a href="#user"><img class="circle" src="IMG/consejo.jpg"></a>
+                                <a href="#name"><span class="white-text name">Consejo Departamental de Desarrollo Zacapa </span></a>
                             </div></li>
                         <li><a class="subheader">CODEDE</a></li>
                         <ul class="collapsible collapsible-accordion">
@@ -54,8 +53,21 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="Proyectos.jsp">Ingreso</a></li>
-                                        <li><a href="Consulta.jsp">Consulta</a></li>
-                                        <li><a href="Reporte.jsp">Rerpote</a></li>
+                                        
+                                        <li><a href="Reporte.jsp">Reporte</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                
+                                <a class="collapsible-header">Consulta<i class="material-icons"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                       
+                                        <li><a href="Consulta.jsp">Consulta Todos los Proyectos</a></li>
+                                        <li><a href="ConsultaEliminados.jsp">Eliminados</a></li>
+                                        <li><a href="Consulta_Terminado.jsp">Finalizados</a></li>
+                                        
                                     </ul>
                                 </div>
                             </li>

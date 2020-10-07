@@ -5,6 +5,7 @@ import java.sql.*;
 
 public class Conexion 
 {
+    ResultSet rs = null;
   Connection con = null;
 
  public Conexion() {
@@ -24,6 +25,8 @@ public class Conexion
  public Connection getConexion(){
   return con;
  }
+
+   
  
 
 }

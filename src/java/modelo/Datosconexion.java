@@ -17,7 +17,7 @@ public class Datosconexion extends Conexion {
         try {
             PreparedStatement ps = null;
             ResultSet rs= null;
-            ps = con.prepareStatement("SELECT id_alumno, nombre, snombre, apellido, sapellido, id_seccion FROM dbo.tbl_alumno");
+            ps = con.prepareStatement("select *  from t_identificacion");
             rs = ps.executeQuery();
             if(rs.next()){
                 conexion = 1;
