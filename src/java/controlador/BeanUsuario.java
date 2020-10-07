@@ -1,7 +1,5 @@
 package controlador;
 
-import java.math.BigDecimal;
-
 public class BeanUsuario {
 
     public String getId_proyecto() {
@@ -44,9 +42,13 @@ public class BeanUsuario {
         this.descripcion = descripcion;
     }
 
-   
+    public String getMonto_total() {
+        return monto_total;
+    }
 
-    
+    public void setMonto_total(String monto_total) {
+        this.monto_total = monto_total;
+    }
 
     public String getId_check() {
         return id_check;
@@ -80,31 +82,13 @@ public class BeanUsuario {
         this.cod_postal = cod_postal;
     }
 
-    public BigDecimal getMonto_total() {
-        return monto_total;
-    }
-
-    public void setMonto_total(BigDecimal monto_total) {
-        this.monto_total = monto_total;
-    }
-
-    public String getId_municipio() {
-        return id_municipio;
-    }
-
-    public void setId_municipio(String id_municipio) {
-        this.id_municipio = id_municipio;
-    }
-    
-    
-
     
 
 
-    public BeanUsuario(String nombre, String num_convenio, String descripcion, 
-           BigDecimal monto_total, String fecha_comit,  String municipio) {
+    public BeanUsuario(String id_proyecto, String nombre, String num_convenio, String descripcion, String fecha_comit, String cod_postal, String id_avance, String id_check, String
+            monto_total, String municipio) {
         
-        
+        this.id_proyecto = id_proyecto;
         this.nombre = nombre;
         this.num_convenio = num_convenio;
         this.descripcion = descripcion;
@@ -114,7 +98,6 @@ public class BeanUsuario {
         this.id_check = id_check;
         this.monto_total = monto_total;
         this.municipio = municipio;
-        this.id_municipio = id_municipio;
 
 
         
@@ -126,10 +109,9 @@ public class BeanUsuario {
     private String num_convenio;
     private String fecha_comit;
     private String descripcion;
-    private BigDecimal monto_total;
+    private String monto_total;
     private String id_check;
     private String id_avance;
-    private String id_municipio;
     private String municipio;
     private String cod_postal;
     

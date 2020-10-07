@@ -17,7 +17,7 @@
   </style>
   <title>Refrescar la URL</title> 
 
-<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=Proyectos.jsp"> </head> 
+<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=Alumnos.jsp"> </head> 
 <body> 
 <center> <h1> Registrado</h1></center>
     <center> <img src="IMG/descarga.png" width="400" alt=""/> </center>
