@@ -6,7 +6,7 @@
 package vista;
 
 
-import controlador.BeanUsuario;
+import controlador.BeanProyecto;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Usuario;
+import modelo.Proyecto;
 import modelo.Conexion;
 
 /**
@@ -67,15 +67,22 @@ public class ServletRegistro extends HttpServlet {
         String Descripcion = request.getParameter("Descripcion");
         String a = request.getParameter("monto_total");
         String fecha = request.getParameter("fecha");
-        String municipio = request.getParameter("municipio");
+        String id_municipio = request.getParameter("municipio");
         BigDecimal monto_total = new BigDecimal(a);
+        String id_tipo_proyecto = request.getParameter("Tipo");
+        String direccion  = request.getParameter("Direccion");
+         
         
-        BeanUsuario busuario;
-        busuario = new BeanUsuario(Nombre, Convenio, Descripcion, monto_total, fecha, municipio);
-        boolean sw = Usuario.agregarUsuario(busuario);
+       
+        BeanProyecto busuario;
+        busuario = new BeanProyecto(Nombre, Convenio, Descripcion, monto_total, direccion, id_municipio, fecha, id_tipo_proyecto);
+        
+        //String nombre, String num_convenio, String descripcion, 
+           //BigDecimal monto_total, String direccion, String id_municipio, String fecha, String id_tipo_proyecto
+        boolean sw = Proyecto.agregarProyecto(busuario);
 
         PrintWriter out = response.getWriter();
-        out.println( Nombre + Convenio + Descripcion + monto_total + fecha + municipio );
+        out.println( Nombre  + Convenio + Descripcion + monto_total + direccion +  id_municipio + fecha+ id_tipo_proyecto );
 
         if (sw) {
             response.sendRedirect("Guardado.jsp");

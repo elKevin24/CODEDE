@@ -1,13 +1,12 @@
 <%-- 
-    Document   : Editar
-    Created on : 05-may-2018, 12:51:49
-    Author     : nichodeveloper
 --%>
-
-
-
-<%@ page import="controlador.BeanUsuario"%> 
-<%@ page import="modelo.Usuario"%>
+<%@page import="controlador.BeanProyecto"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="modelo.Conexion"%>
+<%@ page import="controlador.BeanProyecto"%> 
+<%@ page import="modelo.Proyecto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -21,20 +20,23 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <jsp:include page="menu.jsp" flush="true"></jsp:include>
 
         <title>Modificacion de datos</title>
     </head>
     <body>
+         <div class="row">
+                    
 
 
         <%
             String id = request.getParameter("id");
 
-            BeanUsuario user = new BeanUsuario();
-            user = Usuario.ObtenerUsuario(id);
+            BeanProyecto user = new BeanProyecto();
+            user = Proyecto.ObtenerProyecto(id);
 
-            out.println("<h3>Modificación de alumno</h3>");
-            out.println("<img src='logo.png' width='100'/>");
+            out.println("<h3>Modificación de Proyecto</h3>");
+            
             out.println("<div class='row'>");
             out.println("<form action='Actualizar.jsp' method='post'>");
             out.println("<div class='row'>");
@@ -58,18 +60,69 @@
             out.println("</div>");
             
             out.println("<div class='input-field col s3'>");
-            out.println("<input type='text' size='20' name='Municipio' disabled value=" + user.getMunicipio()+ ">");
+            out.println("<input type='text' size='20' name='Municipio' disabled value=" + user.getId_municipio()+ ">");
             out.println("<label for='Municipio'>Municipio</label>");
+            
             out.println("</div>");
             
             
-            
+           
+                                        
             out.println("<div class='row'>");
             out.println("<div class='input-field col s3'>");
             out.println("<select name='Id_municipio'>");
-            out.println("<option value='1'>Zacapa</option>");
-            out.println("<option value='2'>Estanzuela</option>");
-            out.println("<option value='3'>Rio Hondo</option>");
+
+                                        try {
+                                            Conexion c = new Conexion();
+
+                                            Connection con = c.getConexion();
+                                            Statement st;
+                                            st = con.createStatement();
+                                            ResultSet rs = st.executeQuery("select id_municipio, nombre from t_municipio");
+                                            while (rs.next()) {
+                                    %>
+                                   out.println(" <option value="<%=rs.getInt("id_municipio")%>"><%=rs.getString("nombre")%></option>");
+
+                                    <%
+                                            }
+
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                            out.println("Error " + e.getMessage());
+                                        }
+
+
+                                    
+                              
+            out.println("</select>");
+            out.println("<label>Escoger Tipo</label>");
+            out.println("</div>");
+
+out.println("<div class='input-field col s3'>");
+            out.println("<select name='Tipo'>");
+
+                                        try {
+                                            Conexion c = new Conexion();
+
+                                            Connection con = c.getConexion();
+                                            Statement st;
+                                            st = con.createStatement();
+                                            ResultSet rs = st.executeQuery("SELECT [id_tipoProyecto],[tipo_proyecto]FROM [dbo].[t_tipoproyecto]");
+                                            while (rs.next()) {
+                                    %>
+                                   out.println(" <option value="<%=rs.getInt("id_tipoProyecto")%>"><%=rs.getString("tipo_proyecto")%></option>");
+
+                                    <%
+                                            }
+
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                            out.println("Error " + e.getMessage());
+                                        }
+
+
+                                    
+                              
             out.println("</select>");
             out.println("<label>Escoger Municipio</label>");
             out.println("</div>");
@@ -92,7 +145,8 @@
         %>
 
 
-
+                    </div>
+         </div>
 
 <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

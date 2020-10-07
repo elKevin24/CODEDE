@@ -53,8 +53,21 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="Proyectos.jsp">Ingreso</a></li>
-                                        <li><a href="Consulta.jsp">Consulta</a></li>
+                                        
                                         <li><a href="Reporte.jsp">Reporte</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                
+                                <a class="collapsible-header">Consulta<i class="material-icons"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                       
+                                        <li><a href="Consulta.jsp">Consulta Todos los Proyectos</a></li>
+                                        <li><a href="ConsultaEliminados.jsp">Eliminados</a></li>
+                                        <li><a href="Consulta_Terminado.jsp">Finalizados</a></li>
+                                        
                                     </ul>
                                 </div>
                             </li>

@@ -3,11 +3,12 @@
     Created on : 05-may-2018, 14:39:42
     Author     : nichodeveloper
 --%>
+<%@page import="controlador.BeanProyecto"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.LinkedList"%>
-<%@page import="modelo.Usuario"%>
-<%@page import="controlador.BeanUsuario"%> 
+<%@page import="modelo.Proyecto"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -29,18 +30,20 @@
              String Descripcion = request.getParameter("Descripcion");
              String a= request.getParameter("Monto");
              String Id_municipio = request.getParameter("Id_municipio");
+             String id_tipo_proyecto = request.getParameter("Tipo");
              BigDecimal monto_total = new BigDecimal(a);
         
-             BeanUsuario user = new BeanUsuario();
+             BeanProyecto user = new BeanProyecto();
              user.setId_proyecto(Id_proyecto);
              user.setNombre(Nombre);
              user.setNum_convenio(Convenio);
              user.setDescripcion(Descripcion);
              user.setMonto_total(monto_total);
              user.setId_municipio(Id_municipio);
+             user.setId_tipo_proyecto(id_tipo_proyecto);
              
              
-             res=Usuario.ActualizarUsuario(user);
+             res=Proyecto.ActualizarUsuario(user);
              if(res)
              {
               out.println("<script> alert('Registro  Actualizado')</script>");
