@@ -69,9 +69,9 @@ public class ServletRegistro extends HttpServlet {
         String fecha = request.getParameter("fecha");
         String id_municipio = request.getParameter("municipio");
         BigDecimal monto_total = new BigDecimal(a);
-        String id_tipo_proyecto = request.getParameter("Tipo");
+        String id_tipo_proyecto2 = request.getParameter("Tipo");
         String direccion  = request.getParameter("Direccion");
-         
+        int id_tipo_proyecto = Integer.parseInt(id_tipo_proyecto2);
         
        
         BeanProyecto busuario;

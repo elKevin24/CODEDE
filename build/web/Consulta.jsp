@@ -99,7 +99,7 @@
                         out.println("<td>" + lista.get(i).getFecha() + "</td>");
                         out.println("<td>" + lista.get(i).getId_municipio() + "</td>");
 
-                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
+                        out.println("<td>" + "<a class='waves-effect lime accent-4 btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
                         out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return validar()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
                         out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction1()' href=Desembolso.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Desembolso" + "</a>" + "</td>");
                         out.println("</tr>");

@@ -76,13 +76,15 @@ public class BeanProyecto {
         this.estado = estado;
     }
 
-    public String getId_tipo_proyecto() {
+    public int getId_tipo_proyecto() {
         return id_tipo_proyecto;
     }
 
-    public void setId_tipo_proyecto(String id_tipo_proyecto) {
+    public void setId_tipo_proyecto(int id_tipo_proyecto) {
         this.id_tipo_proyecto = id_tipo_proyecto;
     }
+
+    
 
     public BigDecimal getInvertido() {
         return invertido;
@@ -105,7 +107,7 @@ public class BeanProyecto {
 
 
     public BeanProyecto(String nombre, String num_convenio, String descripcion, 
-           BigDecimal monto_total, String direccion, String id_municipio, String fecha, String id_tipo_proyecto ) {
+           BigDecimal monto_total, String direccion, String id_municipio, String fecha, int id_tipo_proyecto ) {
         
         
         this.nombre = nombre;
@@ -134,7 +136,7 @@ public class BeanProyecto {
     private String id_municipio;
     private String fecha;
     private String estado;
-    private String id_tipo_proyecto;
+    private int id_tipo_proyecto;
     
     public BeanProyecto() {
     }

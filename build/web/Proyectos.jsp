@@ -105,7 +105,7 @@
                         <div class="input-field col s3">
                             <div class="input-icon">
                                 <i>Q</i>
-                            <input type="text" size="20" name="monto_total"  class="reves" required min="1">
+                            <input type="text" size="20" name="monto_total"  required min="1">
                             <label for="monto_total">Monto Total</label>
                             </div>
                         </div>
@@ -202,9 +202,9 @@
                             out.println("<td>" + lista.get(i).getFecha() + "</td>");
                             out.println("<td>" + lista.get(i).getId_municipio() + "</td>");
 
-                            out.println("<td>" + "<a class='waves-effect waves-light btn-small light-blue accent-4' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
-                            out.println("<td>" + "<a class='waves-effect waves-light btn-small light-blue accent-4' onclick='return validar()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
-                            out.println("<td>" + "<a class='waves-effect waves-light btn-small light-blue accent-4' onclick='return myFunction1()' href=Desembolso.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Desembolso" + "</a>" + "</td>");
+                            out.println("<td>" + "<a class='waves-effect waves-light btn-small lime accent-4' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
+                            out.println("<td>" + "<a class='waves-effect waves-light btn-small red accent-4' onclick='return validar()' href=Eliminar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "<i class='material-icons'>delete_forever</i>" + "Eliminar" + "</a>" + "</td>");
+                            out.println("<td>" + "<a class='waves-effect waves-light btn-small amber darken-4' onclick='return myFunction1()' href=Desembolso.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Desembolso" + "</a>" + "</td>");
                             out.println("</tr>");
                         }
                     %>  

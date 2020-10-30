@@ -164,9 +164,9 @@ out.println("<h5 class='center-align'> Del "+fecha+" Al "+fecha2+"</h3>");
                            
 
                                 out.println("<tr>");
-                                out.println("<td>" + des.getDes_porcentaje()+ "</td>");
-                                out.println("<td>" + des.getDes_porciento()+ "</td>");
-                                out.println("<td>" + des.getDiferencia()+ "</td>");
+                                out.println("<td > Q" + formatter.format(des.getDes_porcentaje())+ "</td>");
+                                out.println("<td > Q" + formatter.format(des.getDes_porciento())+ "</td>");
+                                out.println("<td > Q" + formatter.format(des.getDiferencia())+ "</td>");
                                 out.println("</tr>");
 
                             

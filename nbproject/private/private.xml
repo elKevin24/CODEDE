@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/web/Consulta.jsp</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/web/Proyectos.jsp</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/web/Desembolso_1.jsp</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/src/java/modelo/Desembolso.java</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/src/java/vista/ServletRegistro.java</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/web/menu.jsp</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/src/java/vista/ServletDesembolso.java</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/src/java/controlador/BeanDesembolso.java</file>
-            <file>file:/C:/Users/busqu/Documents/CODEDE%20-%20copia/web/Desembolso.jsp</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/web/Consulta.jsp</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/web/Consulta_Financiera_1.jsp</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/web/Consulta_Terminado.jsp</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/src/java/modelo/Proyecto.java</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/src/java/controlador/BeanUsuario.java</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/web/Editar.jsp</file>
+            <file>file:/C:/Users/busqu/Documents/GitHub/CODEDE/web/Proyectos.jsp</file>
         </group>
     </open-files>
 </project-private>

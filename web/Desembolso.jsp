@@ -54,7 +54,8 @@
                 double total = user.getMonto_total().doubleValue();
                 double restante = des.getDiferencia().doubleValue();
                 
-                double result = restante * 100 / total;
+                double result1 = total- restante ;
+                double result = 100 * result1 / total;
 
                 out.println("<h4 align='center'>Desembolso del Proyecto  " + user.getNombre() + "</h4>");
                 out.println("<h5 align='center'>Monto total Q " + formatter.format(user.getMonto_total()) + " Pendiente Q" + formatter.format(des.getDiferencia()) + " Avance en Porcentaje %" + result + "</h5>");
@@ -75,7 +76,7 @@
                         <div class="input-field col s4">
                             <div class="input-icon">
                                 <i>Q</i>
-                            <input  type="number"   class="validate reves" name="Monto"
+                            <input  type="number"   class="validate" name="Monto"
                                     required pattern="[0-9]+" min="1" max="<%=des.getDiferencia()%>">
                             <label for="Monto">Ingresar Monto</label>
                             </div>

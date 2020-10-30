@@ -67,6 +67,7 @@
                                         <li><a href="Consulta.jsp">Consulta Todos los Proyectos</a></li>
                                         <li><a href="ConsultaEliminados.jsp">Eliminados</a></li>
                                         <li><a href="Consulta_Terminado.jsp">Finalizados</a></li>
+                                        <li><a href="Consulta_Financiera.jsp">Consulta Financiera</a></li>
                                         
                                     </ul>
                                 </div>

@@ -58,7 +58,7 @@
 
         
         </div>
-                <h3 class="center-align">Consulta Proyectos Concluidos</h3>
+                <h3 class="center-align">Consulta Proyectos</h3>
                 </div>
                 
                 
@@ -82,7 +82,7 @@
                 
 
             </div>
-               <input type="submit" value="Registrar" class="btn-large light-blue accent-4" name="enviar">
+               <input type="submit" value="Consultar" class="btn-large light-blue accent-4" name="enviar">
                 <%
               //s  out.println("<td>" + "<a class='waves-effect waves-light btn-small light-blue accent-4' onclick='return myFunction()' href=Consulta_Financiera.jsp?id=" + a + ">" + "Editar" + "</a>" + "</td>");
         
