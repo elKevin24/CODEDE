@@ -94,9 +94,9 @@ out.println("<h5 class='center-align'> Del "+fecha+" Al "+fecha2+"</h3>");
                             <th>Nombre</th>
                             <th>Convenio</th>                    
                             <th>Descripcion</th>                    
-                            <th>Direccion</th>
                             <th>Desembolso</th>
-                            <th>Diferencia</th>
+                            <th>Ejecutado</th>
+                            <th>Restante</th>
 
 
 

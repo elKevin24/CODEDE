@@ -54,11 +54,8 @@ public class Proyecto {
             try (Connection con = c.getConexion()) {
                 Statement st;
                 st = con.createStatement();
-                try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, descripcion, monto_total, direccion, t_municipio.nombre as municipio, fecha, tipo_proyecto as tipo\n"
-                        + "from  t_proyecto, t_municipio, t_tipoproyecto\n"
-                        + "where t_proyecto.id_municipio = t_municipio.id_municipio \n"
-                        + "and t_proyecto.id_tipo_proyecto = t_tipoproyecto.id_tipoProyecto\n"
-                        + "and estado = 0 order by fecha_comit desc")) {
+                try (ResultSet rs = st.executeQuery("select id_proyecto, t_proyecto.nombre as nombre, num_convenio, descripcion, monto_total, fecha\n" +
+"from  t_proyecto where  estado = 0 order by fecha_comit desc")) {
                     while (rs.next()) {
                         BeanProyecto proyecto = new BeanProyecto();
                         proyecto.setId_proyecto(rs.getString("id_proyecto"));
@@ -66,10 +63,7 @@ public class Proyecto {
                         proyecto.setNum_convenio(rs.getString("num_convenio"));
                         proyecto.setDescripcion(rs.getString("descripcion"));
                         proyecto.setMonto_total(rs.getBigDecimal("monto_total"));
-                        proyecto.setDireccion(rs.getString("direccion"));
-                        proyecto.setId_municipio(rs.getString("municipio"));
                         proyecto.setFecha(rs.getString("fecha"));
-                        proyecto.setId_tipo_proyecto(rs.getInt("tipo"));
 
                         proyectos.add(proyecto);
                     }

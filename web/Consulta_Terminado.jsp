@@ -72,9 +72,7 @@
                     
                     <th>Descripcion</th>
                     <th>Monto Total</th>
-                    <th>Direccion</th>
-                    
-                    <th>Editar</th>
+                   
                     
 
 
@@ -91,10 +89,9 @@
                         
                         out.println("<td>" + lista.get(i).getDescripcion() + "</td>");
                         out.println("<td> Q" + formatter.format(lista.get(i).getMonto_total()) + "</td>");
-                        out.println("<td>" + lista.get(i).getDireccion() + "</td>");
+                        
 
-                        out.println("<td>" + "<a class='waves-effect waves-light btn-small' onclick='return myFunction()' href=Editar.jsp?id=" + lista.get(i).getId_proyecto() + ">" + "Editar" + "</a>" + "</td>");
-                             out.println("</tr>");
+                                 out.println("</tr>");
 
                     }
                 %>  

@@ -24,6 +24,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -35,7 +36,7 @@
             
             
             <div class="container">
-                
+                <canvas id="myChart" weight="50" height="50"></canvas>
 
             <%
 
@@ -140,9 +141,9 @@
                         <td>No. Desembolso</td>
                         <td>Monto</td>
                         <td>Documento</td>
-                        
-                        <td>Fecha</td>
                         <td>Tipo Desembolso</td>
+                        <td>Fecha</td>
+                        
                         
 
 
@@ -192,5 +193,30 @@
             }
 
         </script>
+        <script>
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: [ 'Restante', 'Gastado'],
+        datasets: [{
+            label: '# of Votes',
+            data: [<%= restante %>, <%= result1 %>],
+            backgroundColor: [
+                'rgba(38, 50, 114, 1)',
+                'rgba(222, 11, 11, 1)'
+                ],
+            
+            
+            borderWidth: 1
+        }]
+    },
+    options: {
+        
+    }
+});
+</script>
+
+
     </body>
 </html>
